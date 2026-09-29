@@ -1,7 +1,6 @@
 @use "@/css/components/mixins/" as *;
 @use './variables';
 @use './components';
-@use './pages';
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -25,7 +24,7 @@ html, body {
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        background: linear-gradient(120deg, #1d1d1d, #000000);
+        background: #fff;
 
         @include mobile {
             min-height: 100dvh;
@@ -41,6 +40,7 @@ button {
     background-color: transparent;
     border: 0px solid transparent;
     color: var(--text-color);
+    cursor: pointer;
 }
 
 a {

@@ -1,6 +1,6 @@
 import axios from "axios";
-import type { ReservationRequest } from "./classroom/classroomTypes";
-import { API_URL } from "../config";
+import type { ReservationRequest } from "@/lib";
+import { API_URL } from "@/lib";
 
 export const reservationService = {
     
