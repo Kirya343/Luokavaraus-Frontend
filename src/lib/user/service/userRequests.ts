@@ -12,7 +12,7 @@ export const register = (request: AuthRequest) =>
         withCredentials: true
     });
 
-export const getCurrent = (): Promise<IUser | null> =>
+export const getCurrent = (): Promise<IUser> =>
     axios.get(`${API_URL}/user`, {
         withCredentials: true
     });
