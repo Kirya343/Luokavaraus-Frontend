@@ -3,16 +3,20 @@ import path from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
+    plugins: [react()],
+    resolve: {
+        alias: {
+            "@": path.resolve(import.meta.dirname, "./src"),
+        },
+        tsconfigPaths: true
     },
-    tsconfigPaths: true
-  },
-  server: {
-    host: '0.0.0.0',
-    allowedHosts: true,
-    port: 30010
-  },
+    server: {
+        host: '0.0.0.0',
+        allowedHosts: true,
+    },
+    preview: {
+        host: '0.0.0.0',
+        port: 30010,
+        allowedHosts: true
+    }
 })
