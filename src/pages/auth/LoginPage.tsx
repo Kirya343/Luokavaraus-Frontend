@@ -66,6 +66,7 @@ const LoginPage = () => {
 
     return (
         <AuthLayout
+            title={"Kirjaudu"}
             message={message}
             inputs={(
                 <>

@@ -3,28 +3,34 @@ import styles from "./AuthLayout.module.scss"
 import type { ReactNode } from "react";
 
 interface AuthlayoutProps {
+    title: string;
     message: { message: string, success: boolean} | null;
     inputs: ReactNode;
     links: ReactNode;
 }
 
-const AuthLayout = ({ message, inputs, links }: AuthlayoutProps) => {
+const AuthLayout = ({ title, message, inputs, links }: AuthlayoutProps) => {
     return (
        <div className={styles.body}>
+
             <div className={styles.formWrap} role="main">
 
-                <div className={clsx("message", message?.success ? "success" : "error")}>
-                    {message?.message}
-                </div>
+                <h1>{title}</h1>
 
-                <div className="inputs">
+                {message && (
+                    <div className={clsx(styles.message, message?.success ? styles.success : styles.error)}>
+                        {message?.message}
+                    </div>
+                )}
+
+                <div className={styles.inputs}>
                     {inputs}
                 </div>
 
-            </div>
+                <div className={styles.links}>
+                    {links}
+                </div>
 
-            <div className={styles.links}>
-                {links}
             </div>
        </div> 
     )

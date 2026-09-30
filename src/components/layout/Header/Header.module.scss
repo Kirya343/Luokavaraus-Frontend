@@ -1,9 +1,10 @@
 .header {
     display: flex;
-    padding: 1rem;
+    padding: 0 1rem;
     background-color: #fff;
     width: 100%;
     justify-content: center;
+    border-bottom: 1px solid var(--border-color);
 
     .headerContainer {
         height: 60px;
@@ -12,15 +13,43 @@
         align-items: center;
         max-width: 1200px;
         justify-content: space-between;
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+        }
     }
 }
 
 .logo {
     height: 100%;
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 90%;
+    }
 }
 
 .login {
     border-radius: 8px;
     padding: 8px 14px;
     border: 1px solid var(--border-color)
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    
+    .link {
+        font-weight: 500;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--blue)
+        }
+    }
 }

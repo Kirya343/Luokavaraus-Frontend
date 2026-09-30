@@ -91,6 +91,7 @@ const RegisterPage = () => {
 
     return (
         <AuthLayout
+            title={"Luo tili"}
             message={message}
             inputs={(
                 <>
