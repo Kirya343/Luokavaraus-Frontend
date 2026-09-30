@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    padding: 1rem;
+    background-color: #fff;
+    width: 100%;
+    justify-content: center;
+
+    .headerContainer {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    height: 100%;
+}
+
+.login {
+    border-radius: 8px;
+    padding: 8px 14px;
+    border: 1px solid var(--border-color)
+}

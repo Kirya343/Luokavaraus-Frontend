@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}

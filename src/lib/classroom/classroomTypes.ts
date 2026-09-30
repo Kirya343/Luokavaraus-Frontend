@@ -1,12 +1,10 @@
 import type { Equipment } from "./classroomEnums";
 
 export interface ClassroomListRequest {
-    page: number;
-    amount: number;
-    equipment: Equipment;
-    peopleCount: number;
-    startAt: string;
-    finishAt: string;
+    equipment: Equipment | null;
+    people: number;
+    startDate: string;
+    finishDate: string;
 }
 
 export interface IClassroom {

@@ -52,3 +52,9 @@
     font-size: larger;
     font-weight: 800;
 }
+
+.classesList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}

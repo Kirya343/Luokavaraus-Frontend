@@ -12,21 +12,9 @@
     flex: 1;
 }
 
-.header {
-    display: flex;
-    padding: 1rem;
-    background-color: #fff;
-    width: 100%;
-
-    .headerContainer {
-        height: 60px;
-        width: 100%;
-        max-width: 1200px;
-    }
-}
-
 .main {
     display: flex;
     width: 100%;
     max-width: 1200px;
+    flex: 1;
 }

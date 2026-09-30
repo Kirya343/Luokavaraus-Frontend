@@ -3,6 +3,8 @@ import RootLayout from "./components/layout/RootLayout";
 import ReservationPage from "./pages/ReservationPage";
 import MainPage from "./pages/MainPage";
 import AccountPage from "./pages/AccountPage";
+import LoginPage from "./pages/auth/LoginPage";
+import RegisterPage from "./pages/auth/RegisterPage";
 
 const AppRouter = () => {
     return (
@@ -12,6 +14,9 @@ const AppRouter = () => {
                     <Route index element={<MainPage/>}></Route>
                     <Route path="reserve" element={<ReservationPage/>}></Route>
                     <Route path="account" element={<AccountPage/>}></Route>
+
+                    <Route path="login" element={<LoginPage/>}></Route>
+                    <Route path="register" element={<RegisterPage/>}></Route>
                 </Route>
             </Routes>
         </>
