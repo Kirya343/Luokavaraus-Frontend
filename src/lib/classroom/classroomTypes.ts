@@ -9,6 +9,7 @@ export interface ClassroomListRequest {
 
 export interface IClassroom {
     id: number;
+    imagePath: string;
     maxPeople: number;
     equipment: Equipment[];
     freeTime: TimeRange[]

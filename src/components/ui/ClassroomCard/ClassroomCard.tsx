@@ -4,6 +4,7 @@ import styles from "./ClassroomCard.module.scss"
 const ClassRoomCard = ({ classroom }: {classroom: IClassroom}) => {
     return (
         <article className={styles.card}>
+            <img className={styles.image} src={classroom.imagePath} />
             <div className={styles.body}>
                 <span>Luokka #{classroom.id}</span>
                 <span>{classroom.equipment}</span>

@@ -1,10 +1,8 @@
 .header {
     display: flex;
     padding: 0 1rem;
-    background-color: #fff;
     width: 100%;
     justify-content: center;
-    border-bottom: 1px solid var(--border-color);
 
     .headerContainer {
         height: 60px;
@@ -13,14 +11,6 @@
         align-items: center;
         max-width: 1200px;
         justify-content: space-between;
-
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            flex: 1;
-        }
     }
 }
 
@@ -37,12 +27,14 @@
 .login {
     border-radius: 8px;
     padding: 8px 14px;
-    border: 1px solid var(--border-color)
+    background-color: rgb(110, 206, 201);
+    color: white;
 }
 
 .nav {
     display: flex;
     gap: 1rem;
+    align-items: center;
     
     .link {
         font-weight: 500;

@@ -37,14 +37,14 @@ const ReservationPage = () => {
             await new Promise(resolve => setTimeout(resolve, 1500))
 
             setClassrooms([
-                { id: 1, maxPeople: 30, equipment: [], freeTime: [], school: school }, 
-                { id: 2, maxPeople: 25, equipment: [], freeTime: [], school: school }, 
-                { id: 3, maxPeople: 20, equipment: [], freeTime: [], school: school }, 
-                { id: 4, maxPeople: 35, equipment: [], freeTime: [], school: school }, 
-                { id: 5, maxPeople: 15, equipment: [], freeTime: [], school: school }, 
-                { id: 6, maxPeople: 40, equipment: [], freeTime: [], school: school }, 
-                { id: 7, maxPeople: 28, equipment: [], freeTime: [], school: school }, 
-                { id: 8, maxPeople: 50, equipment: [], freeTime: [], school: school }
+                { id: 1, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 30, equipment: [], freeTime: [], school: school }, 
+                { id: 2, imagePath: "/classrooms/classroom_1.jpg", maxPeople: 25, equipment: [], freeTime: [], school: school }, 
+                { id: 3, imagePath: "/classrooms/classroom_4.jpg", maxPeople: 20, equipment: [], freeTime: [], school: school }, 
+                { id: 4, imagePath: "/classrooms/classroom_1.jpg", maxPeople: 35, equipment: [], freeTime: [], school: school }, 
+                { id: 5, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 15, equipment: [], freeTime: [], school: school }, 
+                { id: 6, imagePath: "/classrooms/classroom_4.jpg", maxPeople: 40, equipment: [], freeTime: [], school: school }, 
+                { id: 7, imagePath: "/classrooms/classroom_2.jpg", maxPeople: 28, equipment: [], freeTime: [], school: school }, 
+                { id: 8, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 50, equipment: [], freeTime: [], school: school }
             ])
         } finally {
             setLoading(false)
