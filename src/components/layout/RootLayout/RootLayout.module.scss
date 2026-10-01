@@ -2,8 +2,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: #e8f3ff;
+    background: var(--background-l1);
     flex: 1;
+    min-height: 0;
+    overflow: auto;
 }
 
 .main {

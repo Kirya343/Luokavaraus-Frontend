@@ -54,7 +54,7 @@ const ReservationPage = () => {
     useEffect(() => {
 
         loadClassrooms()
-    }, [loadClassrooms])
+    }, [])
 
     return (
         <div className={styles.layout}>

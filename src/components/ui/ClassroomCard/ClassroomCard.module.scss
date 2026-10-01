@@ -1,20 +1,54 @@
+@use "@/css/components/mixins/" as *;
+
 .card {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     border-radius: 12px;
     background-color: #fff;
-    border: 1px solid var(--border-color);
+    border: none;
     gap: 1rem;
+
+    @include shadow;
 }
 
 .body {
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
+    position: relative;
+}
+
+.actions {
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .image {
     width: 100%;
     border-radius: 12px;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+
+    * {
+        text-align: center;
+    }
+}
+
+.reserveBtn {
+    border-radius: 8px;
+    border: 2px solid var(--border-color-l1);
+    padding: 8px 12px;
+    font-weight: 600;
 }

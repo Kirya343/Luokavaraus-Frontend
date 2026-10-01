@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import RootLayout from "./components/layout/RootLayout";
 import ReservationPage from "./pages/ReservationPage";
-import MainPage from "./pages/MainPage";
+import HomePage from "./pages/HomePage";
 import AccountPage from "./pages/AccountPage";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
@@ -11,7 +11,7 @@ const AppRouter = () => {
         <>
             <Routes>
                 <Route element={<RootLayout/>}>
-                    <Route index element={<MainPage/>}></Route>
+                    <Route index element={<HomePage/>}></Route>
                     <Route path="reserve" element={<ReservationPage/>}></Route>
                     <Route path="account" element={<AccountPage/>}></Route>
 

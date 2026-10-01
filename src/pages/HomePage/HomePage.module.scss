@@ -1,0 +1,354 @@
+@use "@/css/components/mixins/" as *;
+
+.page {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1200px;
+    min-height: 620px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 4rem 1.5rem;
+    }
+}
+
+.heroContent {
+    max-width: 700px;
+
+    @include mobile {
+        width: 100%;
+        min-width: 0;
+        height: auto;
+        min-height: 220px;
+    }
+
+    h1 {
+        margin: 1rem 0 1.5rem;
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    p {
+        max-width: 600px;
+        margin-bottom: 2rem;
+        color: var(--text-color-l3);
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: var(--background-l2);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.primaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, opacity 0.2s;
+
+    &:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+    }
+}
+
+.heroCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 280px;
+    min-width: 280px;
+    height: 280px;
+    padding: 2rem;
+    border-radius: 24px;
+    background: var(--background-l2);
+
+    @include shadow-small;
+
+    span {
+        color: var(--text-color-l3);
+    }
+
+    strong {
+        margin: 0.5rem 0;
+        font-size: 5rem;
+        line-height: 1;
+    }
+
+    small {
+        color: var(--text-color-l3);
+    }
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-color-l1);
+    border-bottom: 1px solid var(--border-color-l1);
+
+    @include mobile {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem;
+    text-align: center;
+
+    strong {
+        font-size: 2rem;
+
+        @include mobile {
+            font-size: 1.6rem;
+        }
+    }
+
+    span {
+        color: var(--text-color-l3);
+    }
+}
+
+.about,
+.howItWorks {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 2rem;
+
+    @include mobile {
+        padding: 5rem 1.5rem;
+    }
+}
+
+.sectionHeading {
+    max-width: 650px;
+    margin-bottom: 4rem;
+
+    > span {
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    h2 {
+        margin: 0.8rem 0 1rem;
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        line-height: 1.1;
+    }
+
+    p {
+        color: var(--text-color-l3);
+        line-height: 1.7;
+    }
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature {
+    padding: 2rem;
+    border: 1px solid var(--border-color-l1);
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+    }
+
+    h3 {
+        margin: 1rem 0 0.7rem;
+        font-size: 1.3rem;
+    }
+
+    p {
+        margin: 0;
+        color: var(--text-color-l3);
+        line-height: 1.6;
+    }
+}
+
+.featureNumber {
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.howItWorks {
+    max-width: 900px;
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.step {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color-l1);
+
+    @include mobile {
+        gap: 1rem;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    > strong {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--primary);
+        color: white;
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        margin: 0 0 0.5rem;
+    }
+
+    p {
+        margin: 0;
+        color: var(--text-color-l3);
+        line-height: 1.6;
+    }
+}
+
+.trust {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+
+    @include mobile {
+        padding: 5rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    > div:first-child {
+        max-width: 650px;
+    }
+
+    > div:first-child > span {
+        color: var(--primary);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    h2 {
+        margin: 0.8rem 0 1rem;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.1;
+    }
+
+    p {
+        color: var(--text-color-l3);
+        line-height: 1.7;
+    }
+}
+
+.trustStats {
+    display: flex;
+    gap: 3rem;
+
+    @include mobile {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        min-width: 130px;
+    }
+
+    strong {
+        font-size: 2.5rem;
+    }
+
+    span {
+        color: var(--text-color-l3);
+    }
+}
+
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 2rem;
+    background: var(--background-l2);
+    text-align: center;
+    width: 1150px;
+    border-radius: 12px;
+
+    @include shadow-small;
+
+    h2 {
+        max-width: 700px;
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.1;
+    }
+
+    p {
+        margin: 1.5rem 0 2rem;
+        color: var(--text-color-l3);
+    }
+}

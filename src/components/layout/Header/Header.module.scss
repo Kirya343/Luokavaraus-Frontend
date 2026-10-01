@@ -1,16 +1,25 @@
+@use "@/css/components/mixins/" as *;
+
 .header {
     display: flex;
     padding: 0 1rem;
     width: 100%;
     justify-content: center;
+    position: sticky;
+    top: 0;
 
     .headerContainer {
+        padding: 0 1rem;
         height: 60px;
         width: 100%;
         display: flex;
         align-items: center;
-        max-width: 1200px;
+        max-width: 1232px;
+        background-color: var(--background-l1);
         justify-content: space-between;
+        border-radius: 0 0 10px 10px;
+        
+        @include shadow-small;
     }
 }
 
@@ -29,6 +38,12 @@
     padding: 8px 14px;
     background-color: rgb(110, 206, 201);
     color: white;
+
+    transition: transform 0.1s ease;
+
+    &:active {
+        transform: scale(0.95);
+    }
 }
 
 .nav {
