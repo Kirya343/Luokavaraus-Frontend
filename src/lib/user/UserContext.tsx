@@ -5,6 +5,7 @@ import { userService } from "./service";
 interface UserContextType {
     user: IUser | null;
     loading: boolean;
+    isAuthenticated: boolean;
     loadUser: () => void;
 } 
 
@@ -20,10 +21,10 @@ export const useUser = () => {
 
 export const UserProvider = ({ children }: { children?: React.ReactNode }) => {
 
-    const { user, loading, loadUser } = userService.useCurrentUser();
+    const { user, loading, isAuthenticated, loadUser } = userService.useCurrentUser();
 
     return (
-        <UserContext.Provider value={{ user, loading, loadUser }}>
+        <UserContext.Provider value={{ user, loading, isAuthenticated, loadUser }}>
             {children}
         </UserContext.Provider>
     );

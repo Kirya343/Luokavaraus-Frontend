@@ -3,6 +3,7 @@ import styles from "./ReservationPage.module.scss"
 import { useCallback, useEffect, useState } from "react"
 import ClassRoomCard from "@/components/ui/ClassroomCard/ClassroomCard"
 import Loader from "@/components/ui/Loader/Loader"
+import ClassroomReserveModal from "@/components/ui/modals/ClassroomReserveModal/ClassroomReserveModal"
 
 const ReservationPage = () => {
 
@@ -14,6 +15,7 @@ const ReservationPage = () => {
     const [loading, setLoading] = useState<boolean>(true)
 
     const [classrooms, setClassrooms] = useState<IClassroom[] | []>([])
+    const [selectedClassroom, setSelectedClassrooms] = useState<IClassroom | null>(null)
 
     const loadClassrooms = useCallback(async () => {
 
@@ -117,9 +119,11 @@ const ReservationPage = () => {
 
             <Loader loadingActive={loading}>
                 <div className={styles.classesList}>
-                    {classrooms.map(cr => <ClassRoomCard classroom={cr} />)}
+                    {classrooms.map(cr => <ClassRoomCard classroom={cr} handleReserve={() => setSelectedClassrooms(cr)} />)}
                 </div>
             </Loader>
+
+            <ClassroomReserveModal classroom={selectedClassroom} onClose={() => setSelectedClassrooms(null)} initialSettings={{people, equip, startDate, finishDate}} />
         </div>
     )
 }
