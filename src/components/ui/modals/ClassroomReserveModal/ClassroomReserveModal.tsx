@@ -57,7 +57,7 @@ const ClassroomReserveModal = ({
         }
     }
 
-    return !isAuthenticated ? (
+    return isAuthenticated ? (
         <Modal isOpen={!!classroom} onClose={onClose} title={"Reserve classroom"}>
             <div className={styles.body}>
                 <div className={styles.reserveParams}>
