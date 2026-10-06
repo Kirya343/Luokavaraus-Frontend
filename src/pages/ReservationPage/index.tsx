@@ -35,6 +35,7 @@ const ReservationPage = () => {
             } 
             
             const res = await classroomService.list(request)
+            console.log("loadClassrooms", res.data)
 
             setClassrooms(res.data)
 

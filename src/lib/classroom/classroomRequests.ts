@@ -3,4 +3,4 @@ import { createApi } from "../common/apiClient";
 
 const classroomApi = createApi("/classroom")
 
-export const list = (request: ClassroomListRequest) => classroomApi.post<IClassroom[]>(`/list`, {}, { params: request })
+export const list = (request: ClassroomListRequest) => classroomApi.get<IClassroom[]>(`/list`, { params: request })
