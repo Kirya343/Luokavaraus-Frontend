@@ -18,6 +18,7 @@ export interface IClassroom {
 
 export interface ISchool {
     id: number;
+    name: string;
     address: string;
 }
 

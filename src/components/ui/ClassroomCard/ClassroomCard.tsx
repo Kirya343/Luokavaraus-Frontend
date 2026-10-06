@@ -25,7 +25,7 @@ const ClassRoomCard = ({ classroom, onClick, handleReserve }: ClassRoomCardProps
                 </div>
                 <div className={styles.feature}>
                     <LocationIcon size={18}/>
-                    <span>Koulu: {classroom.school.address}</span>
+                    <span>Koulu: {classroom.school?.address}</span>
                 </div>
 
                 <div className={styles.actions} onClick={handleReserve}>
