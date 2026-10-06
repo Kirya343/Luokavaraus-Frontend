@@ -13,6 +13,7 @@ export function useCurrentUser() {
 
     const loadUser = useCallback(async (cancelled?: boolean) => {
         userService.getCurrent().then(res => {
+            console.log("loadUser", res.data)
             if (!cancelled) {
                 setUser(res.data);
                 setLoading(false);

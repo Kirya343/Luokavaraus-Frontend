@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import type { AuthRequest, AuthResponse, IUser, RegisterRequest } from "../userTypes";
 import { createApi } from "@/lib/common/apiClient";
 
@@ -11,4 +11,4 @@ export const register = (request: RegisterRequest) =>
     userApi.post<AuthResponse>(`/register`, request);
 
 export const getCurrent = () =>
-    axios.get<IUser>(``);
+    userApi.get<IUser>(``);
