@@ -1,75 +1,153 @@
-# React + TypeScript + Vite
+# Luokavaraus – Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Luokavaraus on web-sovellus, jonka avulla käyttäjät voivat etsiä ja varata vapaita luokkahuoneita ja oppimistiloja. Sovelluksen frontend on toteutettu Reactilla ja TypeScriptillä.
 
-Currently, two official plugins are available:
+## Teknologiat
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* React 19
+* TypeScript
+* Vite
+* React Router
+* Axios
+* SCSS
+* ESLint
+* Yarn
 
-## React Compiler
+## Vaatimukset
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Projektin suorittamiseen tarvitaan:
 
-## Expanding the ESLint configuration
+* Node.js
+* Yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Tarkista asennetut versiot:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+node --version
+yarn --version
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Asennus
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Kloonaa projekti ja siirry projektikansioon:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone <repository-url>
+cd Luokavaraus
 ```
+
+Asenna riippuvuudet:
+
+```bash
+yarn install
+```
+
+Luo projektin juureen `.env`-tiedosto ja määritä tarvittavat ympäristömuuttujat.
+
+## Kehitysympäristö
+
+Käynnistä Vite-kehityspalvelin:
+
+```bash
+yarn dev
+```
+
+Sovellus on tämän jälkeen käytettävissä Viten ilmoittamassa osoitteessa.
+
+## Tuotantoversion rakentaminen
+
+Luo tuotantoversio komennolla:
+
+```bash
+yarn build
+```
+
+Rakennettu sovellus sijoitetaan `dist`-kansioon.
+
+Tuotantoversion voi testata paikallisesti:
+
+```bash
+yarn preview
+```
+
+## Komennot
+
+| Komento        | Kuvaus                                             |
+| -------------- | -------------------------------------------------- |
+| `yarn dev`     | Käynnistää kehityspalvelimen                       |
+| `yarn build`   | Tarkistaa TypeScriptin ja rakentaa tuotantoversion |
+| `yarn lint`    | Suorittaa ESLint-tarkistuksen                      |
+| `yarn preview` | Käynnistää tuotantoversion esikatselun             |
+
+## Sivut
+
+Sovelluksessa on tällä hetkellä seuraavat pääsivut:
+
+| Reitti      | Sivu              | Kuvaus                                      |
+| ----------- | ----------------- | ------------------------------------------- |
+| `/`         | Etusivu           | Sovelluksen etusivu ja luokkien perustiedot |
+| `/reserve`  | Varaus            | Vapaiden luokkien etsiminen ja varaaminen   |
+| `/account`  | Tili              | Käyttäjän omat tiedot ja asetukset          |
+| `/login`    | Kirjautuminen     | Käyttäjän kirjautuminen                     |
+| `/register` | Rekisteröityminen | Uuden käyttäjätilin luominen                |
+
+## Projektirakenne
+
+Keskeinen lähdekoodin rakenne:
+
+```text
+src/
+├── components/
+│   ├── layout/
+│   └── ui/
+├── pages/
+│   ├── HomePage/
+│   ├── ReservationPage/
+│   ├── AccountPage/
+│   └── auth/
+│       ├── LoginPage/
+│       └── RegisterPage/
+├── AppRouter.tsx
+└── ...
+```
+
+`pages` sisältää sovelluksen eri sivut ja `components` käyttöliittymän uudelleenkäytettävät komponentit.
+
+## Luokkahuoneiden varaaminen
+
+Varaussivun tarkoituksena on auttaa käyttäjää löytämään sopiva vapaa luokkahuone tai oppimistila.
+
+Luokkahuoneilla voi olla esimerkiksi seuraavia ominaisuuksia:
+
+* tilan enimmäishenkilömäärä
+* käytettävissä olevat välineet
+* vapaat ajat
+* koulu tai oppilaitos
+
+Varusteluun voi kuulua esimerkiksi:
+
+* projektori
+* tietokone
+* valkotaulu
+* äänentoisto
+
+## Arkkitehtuuri
+
+Frontend käyttää REST APIa backend-palvelun kanssa kommunikointiin. HTTP-pyynnöt toteutetaan Axiosilla.
+
+Reititys toteutetaan `react-router-dom`-kirjastolla ja sovelluksen yhteinen ulkoasu määritellään `RootLayout`-komponentissa.
+
+Tyylit toteutetaan SCSS:n avulla, ja komponenttikohtaisia tyylejä voidaan kapseloida SCSS-moduuleihin.
+
+## Kehitys
+
+Projektissa käytetään TypeScriptiä tyypityksen varmistamiseen ja ESLintiä koodin laadun tarkistamiseen.
+
+Ennen muutosten julkaisemista voidaan suorittaa:
+
+```bash
+yarn lint
+yarn build
+```
+
+Näin voidaan varmistaa, että koodi läpäisee lint-tarkistukset ja projekti kääntyy onnistuneesti.
