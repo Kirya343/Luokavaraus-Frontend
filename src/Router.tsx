@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import AccountPage from "./pages/AccountPage";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
+import LoginSuccessPage from "./pages/auth/LoginSuccessPage";
 
 const AppRouter = () => {
     return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
 
                     <Route path="login" element={<LoginPage/>}></Route>
                     <Route path="register" element={<RegisterPage/>}></Route>
+                    <Route path="login/success" element={<LoginSuccessPage/>}></Route>
                 </Route>
             </Routes>
         </>
