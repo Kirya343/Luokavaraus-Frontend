@@ -1,5 +1,5 @@
 // apiClient.js
-import { API_URL } from "@/lib";
+import { API_URL } from "@/lib/common/config";
 import axios from "axios";
 
 const api = axios.create({
