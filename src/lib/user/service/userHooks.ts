@@ -8,7 +8,7 @@ export function useCurrentUser() {
     
     const isAuthenticated = useMemo<boolean>(() => {
         if (!user) return false;
-        return user?.email?.length > 0;
+        return true;
     }, [user]);
 
     const loadUser = useCallback(async (cancelled?: boolean) => {

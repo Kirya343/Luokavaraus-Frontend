@@ -1,4 +1,4 @@
-import { Equipment, type IClassroom } from "@/lib"
+import { classroomService, Equipment, type ClassroomListRequest, type IClassroom } from "@/lib"
 import styles from "./ReservationPage.module.scss"
 import { useCallback, useEffect, useState } from "react"
 import ClassRoomCard from "@/components/ui/ClassroomCard/ClassroomCard"
@@ -27,16 +27,18 @@ const ReservationPage = () => {
                 address: "Microkatu 1"
             }
 
-            /* const request: ClassroomListRequest = {
+            const request: ClassroomListRequest = {
                 equipment: equip,
                 people,
                 startDate,
                 finishDate
             } 
             
-            const data = await classroomService.list(request) */
+            const res = await classroomService.list(request)
 
-            await new Promise(resolve => setTimeout(resolve, 1500))
+            setClassrooms(res.data)
+
+            /* await new Promise(resolve => setTimeout(resolve, 1500))
 
             setClassrooms([
                 { id: 1, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 30, equipment: [], freeTime: [], school: school }, 
@@ -47,7 +49,7 @@ const ReservationPage = () => {
                 { id: 6, imagePath: "/classrooms/classroom_4.jpg", maxPeople: 40, equipment: [], freeTime: [], school: school }, 
                 { id: 7, imagePath: "/classrooms/classroom_2.jpg", maxPeople: 28, equipment: [], freeTime: [], school: school }, 
                 { id: 8, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 50, equipment: [], freeTime: [], school: school }
-            ])
+            ]) */
         } finally {
             setLoading(false)
         }
