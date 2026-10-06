@@ -1,18 +1,14 @@
 import axios from "axios";
-import { API_URL } from "../../common/config";
 import type { AuthRequest, AuthResponse, IUser, RegisterRequest } from "../userTypes";
+import { createApi } from "@/lib/common/apiClient";
 
-export const login = async (request: AuthRequest): Promise<AuthResponse> =>
-    await axios.post(`${API_URL}/user/login`, request, {
-        withCredentials: true
-    });
+const userApi = createApi("/user")
 
-export const register = (request: RegisterRequest): Promise<AuthResponse> =>
-    axios.post(`${API_URL}/user/register`, request, {
-        withCredentials: true
-    });
+export const login = async (request: AuthRequest) =>
+    await userApi.post<AuthResponse>(`/login`, request);
 
-export const getCurrent = (): Promise<IUser> =>
-    axios.get(`${API_URL}/user`, {
-        withCredentials: true
-    });
+export const register = (request: RegisterRequest) =>
+    userApi.post<AuthResponse>(`/register`, request);
+
+export const getCurrent = () =>
+    axios.get<IUser>(``);
