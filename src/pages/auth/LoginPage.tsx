@@ -41,8 +41,8 @@ const LoginPage = () => {
         }
         const res = await userService.login(data);
 
-        setMessage(res);
-        if (res.success == true) {
+        setMessage(res.data);
+        if (res.data.success == true) {
             setTimeout(() => {
                 navigate(`/login/success?redirect=${encodeURIComponent(redirect)}`)
             }, 1500);

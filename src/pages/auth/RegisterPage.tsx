@@ -32,10 +32,10 @@ const RegisterPage = () => {
         const res = await userService.register(data);
 
         if (res) {
-            setMessage(res)
+            setMessage(res.data)
         }
 
-        if (res.success == true) {
+        if (res.data.success == true) {
             loadUser();
             navigate(`/login/success?redirect=${encodeURIComponent(redirect)}`)
         }

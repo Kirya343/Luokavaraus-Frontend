@@ -12,9 +12,9 @@ export function useCurrentUser() {
     }, [user]);
 
     const loadUser = useCallback(async (cancelled?: boolean) => {
-        userService.getCurrent().then(data => {
+        userService.getCurrent().then(res => {
             if (!cancelled) {
-                setUser(data);
+                setUser(res.data);
                 setLoading(false);
             }
         });
