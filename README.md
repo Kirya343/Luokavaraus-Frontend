@@ -24,7 +24,6 @@ Tarkista asennetut versiot:
 
 ```bash
 node --version
-yarn --version
 ```
 
 ## Asennus
@@ -39,7 +38,7 @@ cd Luokavaraus
 Asenna riippuvuudet:
 
 ```bash
-yarn install
+npm install
 ```
 
 Luo projektin juureen `.env`-tiedosto ja määritä tarvittavat ympäristömuuttujat.
@@ -49,7 +48,7 @@ Luo projektin juureen `.env`-tiedosto ja määritä tarvittavat ympäristömuutt
 Käynnistä Vite-kehityspalvelin:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 Sovellus on tämän jälkeen käytettävissä Viten ilmoittamassa osoitteessa.
@@ -74,10 +73,10 @@ yarn preview
 
 | Komento        | Kuvaus                                             |
 | -------------- | -------------------------------------------------- |
-| `yarn dev`     | Käynnistää kehityspalvelimen                       |
-| `yarn build`   | Tarkistaa TypeScriptin ja rakentaa tuotantoversion |
-| `yarn lint`    | Suorittaa ESLint-tarkistuksen                      |
-| `yarn preview` | Käynnistää tuotantoversion esikatselun             |
+| `npm run dev`     | Käynnistää kehityspalvelimen                       |
+| `npm run build`   | Tarkistaa TypeScriptin ja rakentaa tuotantoversion |
+| `npm run lint`    | Suorittaa ESLint-tarkistuksen                      |
+| `npm run preview` | Käynnistää tuotantoversion esikatselun             |
 
 ## Sivut
 
@@ -87,7 +86,6 @@ Sovelluksessa on tällä hetkellä seuraavat pääsivut:
 | ----------- | ----------------- | ------------------------------------------- |
 | `/`         | Etusivu           | Sovelluksen etusivu ja luokkien perustiedot |
 | `/reserve`  | Varaus            | Vapaiden luokkien etsiminen ja varaaminen   |
-| `/account`  | Tili              | Käyttäjän omat tiedot ja asetukset          |
 | `/login`    | Kirjautuminen     | Käyttäjän kirjautuminen                     |
 | `/register` | Rekisteröityminen | Uuden käyttäjätilin luominen                |
 
@@ -103,7 +101,6 @@ src/
 ├── pages/
 │   ├── HomePage/
 │   ├── ReservationPage/
-│   ├── AccountPage/
 │   └── auth/
 │       ├── LoginPage/
 │       └── RegisterPage/
@@ -146,8 +143,9 @@ Projektissa käytetään TypeScriptiä tyypityksen varmistamiseen ja ESLintiä k
 Ennen muutosten julkaisemista voidaan suorittaa:
 
 ```bash
-yarn lint
-yarn build
+npm run build
 ```
 
 Näin voidaan varmistaa, että koodi läpäisee lint-tarkistukset ja projekti kääntyy onnistuneesti.
+
+Toimi osoitessa http://185.176.94.192:30010/
