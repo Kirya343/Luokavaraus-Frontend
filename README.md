@@ -11,14 +11,12 @@ Luokavaraus on web-sovellus, jonka avulla käyttäjät voivat etsiä ja varata v
 * Axios
 * SCSS
 * ESLint
-* Yarn
 
 ## Vaatimukset
 
 Projektin suorittamiseen tarvitaan:
 
 * Node.js
-* Yarn
 
 Tarkista asennetut versiot:
 
@@ -58,7 +56,7 @@ Sovellus on tämän jälkeen käytettävissä Viten ilmoittamassa osoitteessa.
 Luo tuotantoversio komennolla:
 
 ```bash
-yarn build
+npm run build
 ```
 
 Rakennettu sovellus sijoitetaan `dist`-kansioon.
