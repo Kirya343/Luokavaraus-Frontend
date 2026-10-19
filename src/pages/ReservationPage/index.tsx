@@ -22,10 +22,6 @@ const ReservationPage = () => {
         setLoading(true)
 
         try {
-            const school = {
-                id: 1,
-                address: "Microkatu 1"
-            }
 
             const request: ClassroomListRequest = {
                 equipment: equip,
@@ -39,7 +35,13 @@ const ReservationPage = () => {
 
             setClassrooms(res.data)
 
-            /* await new Promise(resolve => setTimeout(resolve, 1500))
+            /* const school = {
+                id: 1,
+                name: "Savonammattiopisto",
+                address: "Microkatu 1"
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 1500))
 
             setClassrooms([
                 { id: 1, imagePath: "/classrooms/classroom_3.jpg", maxPeople: 30, equipment: [], freeTime: [], school: school }, 

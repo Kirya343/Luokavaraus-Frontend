@@ -6,11 +6,11 @@ import LocationIcon from "@/components/icons/LocationIcon";
 interface ClassRoomCardProps { 
     classroom: IClassroom, 
     onClick?: () => void, 
-    handleReserve: () => void 
+    handleReserve?: () => void 
 }
 
 const ClassRoomCard = ({ classroom, onClick, handleReserve }: ClassRoomCardProps) => {
-    return (
+    return classroom && (
         <article className={styles.card} onClick={onClick}>
             <img className={styles.image} src={classroom.imagePath} />
             <div className={styles.body}>
@@ -28,9 +28,9 @@ const ClassRoomCard = ({ classroom, onClick, handleReserve }: ClassRoomCardProps
                     <span>Koulu: {classroom.school?.address}</span>
                 </div>
 
-                <div className={styles.actions} onClick={handleReserve}>
+                {handleReserve && <div className={styles.actions} onClick={handleReserve}>
                     <button className={styles.reserveBtn}>Varaa nyt</button>
-                </div>
+                </div>}
             </div>
         </article>
     );

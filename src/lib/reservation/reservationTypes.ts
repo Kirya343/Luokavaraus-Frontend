@@ -1,9 +1,16 @@
-import type { Equipment } from "../classroom";
+import type { IClassroom } from "../classroom";
 
 export interface ReservationRequest {
     classroomId: number;
     peopleCount: number;
-    equip: Equipment | null;
+    startAt: string;
+    finishAt: string;
+}
+
+export interface IReservation {
+    id: number;
+    classroom: IClassroom
+    peopleCount: number;
     startAt: string;
     finishAt: string;
 }
