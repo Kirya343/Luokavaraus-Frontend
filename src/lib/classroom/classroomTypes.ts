@@ -1,4 +1,4 @@
-import type { Equipment } from "./classroomEnums";
+import type { Equipment, EquipmentKey } from "./classroomEnums";
 
 export interface ClassroomListRequest {
     equipment: Equipment | null;
@@ -11,7 +11,7 @@ export interface IClassroom {
     id: number;
     imagePath: string;
     maxPeople: number;
-    equipment: Equipment[];
+    equipment: EquipmentKey[];
     freeTime: TimeRange[]
     school: ISchool;
 }

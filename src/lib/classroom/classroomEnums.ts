@@ -13,4 +13,5 @@ export const Equipment = {
     FLEXIBLE_SEATING: "Muunneltava istumajärjestys"
 } as const;
 
-export type Equipment = typeof Equipment[keyof typeof Equipment];
+export type EquipmentKey = keyof typeof Equipment;
+export type Equipment = typeof Equipment[EquipmentKey];
