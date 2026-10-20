@@ -1,0 +1,35 @@
+.body {
+    display: flex;
+}
+
+.reserveParams {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    margin: 2rem 0;
+    gap: 1rem;
+
+    .param {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        input, select {
+            background-color: #eef3f8;
+            padding: 12px 16px;
+            border-radius: 8px;
+            width: fit-content;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            outline: 2px solid;
+            outline-color: transperent;
+            transition: all 0.2s ease;
+            width: 100%;
+
+            &:focus {
+                outline-color: #2f77b2;
+            }
+        }
+    }
+}

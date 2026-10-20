@@ -12,7 +12,11 @@ const Header = () => {
                     
                 <nav className={styles.nav}>
                     <NavLink className={styles.link} to={"/reserve"}>Varaa luokaa</NavLink>
-                    {user ? user.name : (<Link className={styles.login} to={"/login"}>Kirjaudu</Link>)}
+                    {user ? (
+                        <Link className={styles.login} to={"/account"}>{user.name}</Link>
+                    ) : (
+                        <Link className={styles.login} to={"/login"}>Kirjaudu</Link>
+                    )}
                 </nav>
             </div>
         </header>

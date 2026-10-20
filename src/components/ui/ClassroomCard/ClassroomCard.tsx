@@ -1,4 +1,4 @@
-import type { IClassroom } from "@/lib";
+import { Equipment, type IClassroom } from "@/lib";
 import styles from "./ClassroomCard.module.scss"
 import UserIcon from "@/components/icons/UserIcon";
 import LocationIcon from "@/components/icons/LocationIcon";
@@ -17,7 +17,13 @@ const ClassRoomCard = ({ classroom, onClick, handleReserve }: ClassRoomCardProps
 
                 <span className={styles.title}>Luokka #{classroom.id}</span>
 
-                {classroom.equipment.length > 0 && <span>{classroom.equipment}</span>}
+                {classroom.equipment.length > 0 && (
+                    <span>
+                        {classroom.equipment
+                            .map((item) => Equipment[item])
+                            .join(", ")}
+                    </span>
+                )}
 
                 <div className={styles.feature}>
                     <UserIcon size={18}/>

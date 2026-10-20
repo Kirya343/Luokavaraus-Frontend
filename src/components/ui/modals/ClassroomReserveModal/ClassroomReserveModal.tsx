@@ -38,7 +38,6 @@ const ClassroomReserveModal = ({
         const request: ReservationRequest = {
             classroomId: classroom.id,
             peopleCount: settings.people,
-            equip: settings.equip,
             startAt: settings.startDate,
             finishAt: settings.finishDate
         }
@@ -61,21 +60,9 @@ const ClassroomReserveModal = ({
         <Modal isOpen={!!classroom} onClose={onClose} title={"Reserve classroom"}>
             <div className={styles.body}>
                 <div className={styles.reserveParams}>
-                    <div className={styles.param}>
-                        <span>1. VARUSTEET</span>
-                        <select>
-                            <option value="" onSelect={() => setSettings(p => ({...p, equip: null}))} selected={settings.equip === null}>Valitse</option>
-
-                            {(Object.keys(Equipment) as Array<keyof typeof Equipment>).map(eq => (
-                                <option key={eq} value={eq} onSelect={() => setSettings(p => ({...p, equip: Equipment[eq]}))} selected={settings.equip === Equipment[eq]}>
-                                    {Equipment[eq]}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
 
                     <div className={styles.param}>
-                        <span>2. HENKILÖMÄÄRÄ</span>
+                        <span>1. HENKILÖMÄÄRÄ</span>
                         <input 
                             type="number"
                             value={settings.people}
@@ -84,17 +71,21 @@ const ClassroomReserveModal = ({
                     </div>
 
                     <div className={styles.param}>
-                        <span>3. ALKU</span>
+                        <span>2. ALKU</span>
 
                         <input 
                             type="datetime-local"
                             value={settings.startDate}
-                            onChange={(e) => setSettings(p => ({...p, startDate: e.target.value}))}
+                            onChange={(e) => setSettings(p => ({
+                                ...p, 
+                                startDate: e.target.value,
+                                finishDate: e.target.value
+                            }))}
                         />
                     </div>
 
                     <div className={styles.param}>
-                        <span>4. LOPPU</span>
+                        <span>3. LOPPU</span>
 
                         <input 
                             type="datetime-local"
